@@ -1,0 +1,84 @@
+
+// Bootstrap
+@import 'bootstrap/functions';
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+@import 'bootstrap/utilities';
+@import 'bootstrap/root';
+@import 'bootstrap/reboot';
+@import 'bootstrap/type';
+@import 'bootstrap/images';
+@import 'bootstrap/containers';
+@import 'bootstrap/grid';
+@import 'bootstrap/tables';
+@import 'bootstrap/forms';
+@import 'bootstrap/buttons';
+@import 'bootstrap/transitions';
+@import 'bootstrap/nav';
+@import 'bootstrap/navbar';
+@import 'bootstrap/helpers';
+@import 'bootstrap/utilities/api';
+
+// FA
+
+@import 'fontawesome/fontawesome';
+@import 'fontawesome/brands';
+@import 'fontawesome/regular.scss';
+@import 'fontawesome/solid.scss';
+
+@import 'variables';
+
+.overflow {
+  &-vert {
+    overflow: hidden scroll;
+  }
+  &-hor {
+    overflow: scroll hidden;
+  }
+}
+
+.text {
+  &-size {
+    @for $i from 1 to 100 {
+      &-#{$i}-pt {
+        font-size: #{$i}pt;
+      }
+    }
+  }
+  &-outline {
+    @each $key, $item in $theme_colors {
+      &-#{$key} {
+        text-shadow: -1px -1px 0 #{$item}, -1px 0 0 #{$item},
+          -1px 1px 0 #{$item}, 0 -1px 0 #{$item}, 0 0 0 #{$item},
+          0 1px 0 #{$item}, 1px -1px 0 #{$item}, 1px 0 0 #{$item},
+          1px 1px 0 #{$item};
+      }
+    }
+  }
+}
+
+.z-index {
+  @for $i from 1 to 10 {
+    &-#{$i} {
+      z-index: $i;
+    }
+  }
+}
+
+.min-h {
+  @for $i from 1 to 100 {
+    &-#{$i} {
+      min-height: $i * 0.01%;
+    }
+  }
+}
+
+.w {
+  &-cm {
+    @each $key, $value in $cm-sizes {
+      &-#{$key} {
+        width: $value;
+      }
+    }
+  }
+}
